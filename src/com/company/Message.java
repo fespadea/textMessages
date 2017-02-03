@@ -5,9 +5,19 @@ import java.text.*;
  * Created by fs279 on 1/30/17.
  */
 public class Message {
-    public String personNumber;
-    public String message;
+    private String personNumber;
+    private String message;
     DateFormat df = new SimpleDateFormat("HH:mm:ss");
     Date dateobj = new Date();
-    public String timeRecieve = df.format(dateobj);
+    public final String timeRecieve = df.format(dateobj);
+    public Message(String pN, String m){
+        personNumber = pN;
+        message = m + " " + timeRecieve;
+    }
+    public String getMessage(){
+        return message;
+    }
+    public String getPersonNumber(){
+        return personNumber;
+    }
 }
